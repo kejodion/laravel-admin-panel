@@ -2,7 +2,7 @@
 
 Laravel Admin Panel ("LAP") is a drop-in admin panel package for Laravel which promotes rapid scaffolding & development.
 
-- [Demo](https://lap.kjjdion.com)
+- [Demo](https://lap.kjjdion.com/admin)
 - [Screenshots](https://imgur.com/a/12mGWNW)
 - [Documentation](https://lap.kjjdion.com/docs)
 - [GitHub](https://github.com/kjjdion/laravel-admin-panel)
