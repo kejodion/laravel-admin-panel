@@ -31,6 +31,7 @@ class ActivityLogController extends Controller
             ['title' => 'User', 'data' => 'user.name'],
             ['title' => '', 'data' => 'actions', 'searchable' => false, 'orderable' => false],
         ]);
+        $html->orderBy(0, 'desc');
         $html->setTableAttribute('id', 'activity_logs_datatable');
 
         return view('lap::activity_logs.index', compact('html'));
