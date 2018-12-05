@@ -1,0 +1,8 @@
+// {model_variables}
+Route::get('{view_prefix_url}{model_variables}', '{controller_route}{model_class}Controller@index')->name('{view_prefix_name}{model_variables}');
+Route::get('{view_prefix_url}{model_variables}/create', '{controller_route}{model_class}Controller@createForm')->name('{view_prefix_name}{model_variables}.create');
+Route::post('{view_prefix_url}{model_variables}/create', '{controller_route}{model_class}Controller@create');
+Route::get('{view_prefix_url}{model_variables}/read/{{model_variable}}', '{controller_route}{model_class}Controller@read')->name('{view_prefix_name}{model_variables}.read');
+Route::get('{view_prefix_url}{model_variables}/update/{{model_variable}}', '{controller_route}{model_class}Controller@updateForm')->name('{view_prefix_name}{model_variables}.update');
+Route::patch('{view_prefix_url}{model_variables}/update/{{model_variable}}', '{controller_route}{model_class}Controller@update');
+Route::delete('{view_prefix_url}{model_variables}/delete/{{model_variable}}', '{controller_route}{model_class}Controller@delete')->name('{view_prefix_name}{model_variables}.delete');

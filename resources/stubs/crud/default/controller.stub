@@ -1,0 +1,115 @@
+<?php
+
+namespace {controller_namespace};
+
+use {model_namespace}\{model_class};
+use App\Http\Controllers\Controller;
+use Yajra\DataTables\Html\Builder;
+
+class {model_class}Controller extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware(['auth_admin', 'can:Access Admin Panel']);
+        $this->middleware('intend_url')->only(['index', 'read']);
+        $this->middleware('can:Create {model_strings}')->only(['createForm', 'create']);
+        $this->middleware('can:Read {model_strings}')->only(['index', 'read']);
+        $this->middleware('can:Update {model_strings}')->only(['updateForm', 'update']);
+        $this->middleware(['can:Delete {model_strings}'])->only('delete');
+    }
+
+    public function index(Builder $builder)
+    {
+        if (request()->ajax()) {
+            ${model_variables} = {model_class}::query(){relationships_query};
+            $datatable = datatables(${model_variables})
+                ->editColumn('actions', function (${model_variable}) {
+                    return view('{view_prefix_name}{model_variables}.datatable.actions', compact('{model_variable}'));
+                })
+                ->rawColumns(['actions']);
+
+            return $datatable->toJson();
+        }
+
+        $html = $builder->columns([
+            {datatable}
+            ['title' => '', 'data' => 'actions', 'searchable' => false, 'orderable' => false],
+        ]);
+        $html->setTableAttribute('id', '{model_variables}_datatable');
+
+        return view('{view_prefix_name}{model_variables}.index', compact('html'));
+    }
+
+    public function createForm()
+    {
+        return view('{view_prefix_name}{model_variables}.create');
+    }
+
+    public function create()
+    {
+        $this->validate(request(), [
+            {validations_create}
+        ]);
+
+        ${model_variable} = {model_class}::create(request()->all());
+
+        activity('Created {model_string}: ' . ${model_variable}->{model_primary_attribute}, request()->all(), ${model_variable});
+        flash(['success', '{model_string} created!']);
+
+        if (request()->input('_submit') == 'redirect') {
+            return response()->json(['redirect' => session()->pull('url.intended', route('admin.{model_variables}'))]);
+        }
+        else {
+            return response()->json(['reload_page' => true]);
+        }
+    }
+
+    public function read({model_class} ${model_variable})
+    {
+        return view('{view_prefix_name}{model_variables}.read', compact('{model_variable}'));
+    }
+
+    public function updateForm({model_class} ${model_variable})
+    {
+        return view('{view_prefix_name}{model_variables}.update', compact('{model_variable}'));
+    }
+
+    public function update({model_class} ${model_variable})
+    {
+        $this->validate(request(), [
+            {validations_update}
+        ]);
+
+        ${model_variable}->update(request()->all());
+
+        activity('Updated {model_string}: ' . ${model_variable}->{model_primary_attribute}, request()->all(), ${model_variable});
+        flash(['success', '{model_string} updated!']);
+
+        if (request()->input('_submit') == 'redirect') {
+            return response()->json(['redirect' => session()->pull('url.intended', route('admin.{model_variables}'))]);
+        }
+        else {
+            return response()->json(['reload_page' => true]);
+        }
+    }
+
+    public function delete({model_class} ${model_variable})
+    {
+        ${model_variable}->delete();
+
+        activity('Deleted {model_string}: ' . ${model_variable}->{model_primary_attribute}, ${model_variable}->toArray());
+        $flash = ['success', '{model_string} deleted!'];
+
+        if (request()->input('_submit') == 'reload_datatables') {
+            return response()->json([
+                'flash' => $flash,
+                'reload_datatables' => true,
+            ]);
+        }
+        else {
+            flash($flash);
+
+            return redirect()->route('admin.{model_variables}');
+        }
+    }
+}

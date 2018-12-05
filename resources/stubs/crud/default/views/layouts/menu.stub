@@ -1,0 +1,5 @@
+@can('Read {model_strings}')
+    <li{!! request()->is('{view_prefix_url}{model_variables}') ? ' class="active"' : '' !!}>
+        <a href="{{ route('{view_prefix_name}{model_variables}') }}"><i class="fal fa-fw {model_icon} mr-3"></i>{model_strings}</a>
+    </li>
+@endcan

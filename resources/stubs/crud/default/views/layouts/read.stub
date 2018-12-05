@@ -1,0 +1,6 @@
+        <div class="list-group-item">
+            <div class="row">
+                <div class="col-md-2">{attribute_label}</div>
+                <div class="col-md-8">{attribute_value}</div>
+            </div>
+        </div>

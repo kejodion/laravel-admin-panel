@@ -1,0 +1,9 @@
+                        <div class="form-control-plaintext">
+                            <input type="hidden" name="{attribute}">
+                            @foreach({input_options} as {input_option})
+                                <div class="custom-control custom-{input_type}">
+                                    <input type="{input_type}" name="{input_name}" id="{input_id}" class="custom-control-input" value="{input_option_value}"{input_option_checked}>
+                                    <label for="{input_id}" class="custom-control-label">{input_option_label}</label>
+                                </div>
+                            @endforeach
+                        </div>

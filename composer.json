@@ -1,0 +1,35 @@
+{
+  "name": "kjjdion/laravel-admin-panel",
+  "description": "An admin panel package for Laravel.",
+  "homepage": "https://github.com/kjjdion/laravel-admin-panel",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Dion",
+      "email": "kjjdion@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "erusev/parsedown": "^1.7",
+    "kalnoy/nestedset": "^4.3",
+    "laravel/framework": "5.7.*",
+    "yajra/laravel-datatables-html": "4.0",
+    "yajra/laravel-datatables-oracle": "~8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kjjdion\\LaravelAdminPanel\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kjjdion\\LaravelAdminPanel\\LapServiceProvider"
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+            <div class="list-group-item">
+                <div class="form-group row mb-0">
+                    <label for="{attribute}" class="col-md-2 col-form-label">{attribute_label}</label>
+                    <div class="col-md-8">
+                        {attribute_input}
+                    </div>
+                </div>
+            </div>

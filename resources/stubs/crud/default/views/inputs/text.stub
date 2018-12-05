@@ -1,0 +1,1 @@
+                        <input type="{input_type}" name="{input_name}" id="{input_id}" class="form-control"{input_value}>

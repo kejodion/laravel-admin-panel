@@ -1,0 +1,18 @@
+<?php
+
+namespace {model_namespace};
+
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Kjjdion\LaravelAdminPanel\Traits\DynamicFillable;
+use Kjjdion\LaravelAdminPanel\Traits\UserTimezone;
+
+class {model_class} extends Eloquent
+{
+    use DynamicFillable, UserTimezone;
+
+    {model_casts}
+
+    {relationships}
+
+    {user_timezones}
+}

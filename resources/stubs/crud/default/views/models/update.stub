@@ -1,0 +1,20 @@
+@extends('lap::layouts.auth')
+
+@section('title', 'Update {model_string}')
+@section('child-content')
+    <h2>@yield('title')</h2>
+
+    <form method="POST" action="{{ route('{view_prefix_name}{model_variables}.update', ${model_variable}->id) }}"{form_enctype} novalidate data-ajax-form>
+        @csrf
+        @method('PATCH')
+
+        <div class="list-group mb-3">
+            {inputs_update}
+
+            <div class="list-group-item bg-light text-left text-md-right pb-1">
+                <button type="submit" name="_submit" class="btn btn-primary mb-2" value="reload_page">Save</button>
+                <button type="submit" name="_submit" class="btn btn-primary mb-2" value="redirect">Save &amp; Go Back</button>
+            </div>
+        </div>
+    </form>
+@endsection

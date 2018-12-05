@@ -1,0 +1,15 @@
+<div class="text-right text-nowrap">
+    <a href="{{ route('{view_prefix_name}{model_variables}.read', ${model_variable}->id) }}" class="btn btn-link text-secondary p-1" title="Read"><i class="fal fa-lg fa-eye"></i></a>
+    @can('Update {model_strings}')
+        <a href="{{ route('{view_prefix_name}{model_variables}.update', ${model_variable}->id) }}" class="btn btn-link text-secondary p-1" title="Update"><i class="fal fa-lg fa-edit"></i></a>
+    @endcan
+    @can('Delete {model_strings}')
+        <form method="POST" action="{{ route('{view_prefix_name}{model_variables}.delete', ${model_variable}->id) }}" class="d-inline-block" novalidate data-ajax-form>
+            @csrf
+            @method('DELETE')
+            <button type="submit" name="_submit" class="btn btn-link text-secondary p-1" title="Delete" value="reload_datatables" data-confirm>
+                <i class="fal fa-lg fa-trash-alt"></i>
+            </button>
+        </form>
+    @endcan
+</div>

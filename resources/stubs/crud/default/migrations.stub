@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Create{model_class}Table extends Migration
+{
+    public function up()
+    {
+        // create table
+        Schema::create('{model_variables}', function (Blueprint $table) {
+            $table->increments('id');
+            {migrations}
+            $table->timestamps();
+        });
+
+        // add permissions
+        app(config('lap.models.permission'))->createGroup('{model_strings}', ['Create {model_strings}', 'Read {model_strings}', 'Update {model_strings}', 'Delete {model_strings}']);
+    }
+
+    public function down()
+    {
+        // drop table
+        Schema::dropIfExists('{model_variables}');
+
+        // delete permissions
+        app(config('lap.models.permission'))->where('group', '{model_strings}')->delete();
+    }
+}
