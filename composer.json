@@ -25,6 +25,9 @@
       "src/helpers.php"
     ]
   },
+  "conflict": {
+    "spatie/laravel-permission": "*"
+  },
   "extra": {
     "laravel": {
       "providers": [
