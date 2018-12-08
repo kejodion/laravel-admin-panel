@@ -7,7 +7,7 @@
     <form method="POST" action="{{ route('{view_prefix_name}{model_variables}.create') }}"{form_enctype} novalidate data-ajax-form>
         @csrf
 
-        <div class="list-group mb-3">
+        <div class="list-group">
             {inputs_create}
 
             <div class="list-group-item bg-light text-left text-md-right pb-1">

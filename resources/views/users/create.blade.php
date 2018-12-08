@@ -7,7 +7,7 @@
     <form method="POST" action="{{ route('admin.users.create') }}" novalidate data-ajax-form>
         @csrf
 
-        <div class="list-group mb-3">
+        <div class="list-group">
             <div class="list-group-item">
                 <div class="form-group row mb-0">
                     <label for="name" class="col-md-2 col-form-label">Name</label>

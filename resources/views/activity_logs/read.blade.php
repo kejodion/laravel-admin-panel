@@ -4,7 +4,7 @@
 @section('child-content')
     <h2>@yield('title')</h2>
 
-    <div class="list-group mb-3">
+    <div class="list-group">
         <div class="list-group-item">
             <div class="row">
                 <div class="col-md-2">ID</div>

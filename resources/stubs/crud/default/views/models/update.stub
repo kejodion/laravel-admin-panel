@@ -8,7 +8,7 @@
         @csrf
         @method('PATCH')
 
-        <div class="list-group mb-3">
+        <div class="list-group">
             {inputs_update}
 
             <div class="list-group-item bg-light text-left text-md-right pb-1">
