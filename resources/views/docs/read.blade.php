@@ -6,15 +6,15 @@
         <div class="col-md">
             <h2 class="mb-0">@yield('title')</h2>
         </div>
-        <div class="col-md-auto">
+        <div class="col-md-auto mt-2 mt-md-0">
             @can('Update Docs')
-                <a href="{{ route('admin.docs.update', $doc->id) }}" class="btn btn-primary mt-2 mt-md-0">Update</a>
+                <a href="{{ route('admin.docs.update', $doc->id) }}" class="btn btn-primary">Update</a>
             @endcan
             @can('Delete Docs')
                 <form method="POST" action="{{ route('admin.docs.delete', $doc->id) }}" class="d-inline-block">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-primary mt-2 mt-md-0" data-confirm{{ $doc->system ? ' disabled' : '' }}>Delete</button>
+                    <button type="submit" class="btn btn-primary" data-confirm{{ $doc->system ? ' disabled' : '' }}>Delete</button>
                 </form>
             @endcan
         </div>

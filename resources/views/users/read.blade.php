@@ -6,16 +6,16 @@
         <div class="col-md">
             <h2 class="mb-0">@yield('title')</h2>
         </div>
-        <div class="col-md-auto">
+        <div class="col-md-auto mt-2 mt-md-0">
             @can('Update Users')
-                <a href="{{ route('admin.users.update', $user->id) }}" class="btn btn-primary mt-2 mt-md-0">Update</a>
-                <a href="{{ route('admin.users.password', $user->id) }}" class="btn btn-primary mt-2 mt-md-0">Change Password</a>
+                <a href="{{ route('admin.users.update', $user->id) }}" class="btn btn-primary">Update</a>
+                <a href="{{ route('admin.users.password', $user->id) }}" class="btn btn-primary">Change Password</a>
             @endcan
             @can('Delete Users')
                 <form method="POST" action="{{ route('admin.users.delete', $user->id) }}" class="d-inline-block">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-primary mt-2 mt-md-0" data-confirm>Delete</button>
+                    <button type="submit" class="btn btn-primary" data-confirm>Delete</button>
                 </form>
             @endcan
         </div>

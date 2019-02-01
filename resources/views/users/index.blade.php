@@ -6,9 +6,9 @@
         <div class="col-md">
             <h2 class="mb-0">@yield('title')</h2>
         </div>
-        <div class="col-md-auto">
+        <div class="col-md-auto mt-2 mt-md-0">
             @can('Create Users')
-                <a href="{{ route('admin.users.create') }}" class="btn btn-primary mt-2 mt-md-0">Create User</a>
+                <a href="{{ route('admin.users.create') }}" class="btn btn-primary">Create User</a>
             @endcan
         </div>
     </div>
