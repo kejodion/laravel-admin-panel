@@ -1,3 +1,9 @@
+**Package no longer maintained**
+
+Please consider Laravel AJAX CRUD instead: https://github.com/kdion4891/laravel-ajax-crud
+
+---
+
 ## Laravel Admin Panel
 
 Laravel Admin Panel ("LAP") is a drop-in admin panel package for Laravel which promotes rapid scaffolding & development.
