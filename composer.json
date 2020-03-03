@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "erusev/parsedown": "^1.71",
+    "erusev/parsedown": "^1.7",
     "kalnoy/nestedset": "5.0.0",
     "laravel/framework": "^6.0",
     "yajra/laravel-datatables-html": "^4.0",
