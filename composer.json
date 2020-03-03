@@ -1,7 +1,7 @@
 {
-  "name": "kjjdion/laravel-admin-panel",
+  "name": "ppm1111/laravel-admin-panel",
   "description": "An admin panel package for Laravel.",
-  "homepage": "https://github.com/kjjdion/laravel-admin-panel",
+  "homepage": "https://github.com/ppm1111/laravel-admin-panel",
   "license": "MIT",
   "authors": [
     {
@@ -12,10 +12,10 @@
   ],
   "require": {
     "erusev/parsedown": "^1.7",
-    "kalnoy/nestedset": "^4.3",
-    "laravel/framework": "5.7.*",
-    "yajra/laravel-datatables-html": "4.0",
-    "yajra/laravel-datatables-oracle": "~8.0"
+    "kalnoy/nestedset": "5.0.0",
+    "laravel/framework": "^6.0",
+    "yajra/laravel-datatables-html": "^4.0",
+    "yajra/laravel-datatables-oracle": "~9.0"
   },
   "autoload": {
     "psr-4": {
